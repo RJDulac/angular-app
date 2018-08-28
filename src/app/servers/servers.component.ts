@@ -16,13 +16,19 @@ export class ServersComponent implements OnInit {
   serverName = 'Testserver';
   serverCreated = false;
   servers = ['Testserver', 'Testserver 2'];
+  hideP = false;
+  log = [];
 
   constructor() {
     setTimeout(() => {
       this.allowNewServer = true;
     }, 2000);
    }
-
+  onToggleDetails() {
+    this.hideP = !this.hideP;
+    // this.log.push(this.log.length + 1);
+    this.log.push(new Date());
+  }
   ngOnInit() {
   }
   onCreateServer() {
